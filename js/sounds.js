@@ -461,8 +461,6 @@
     }
 
     function init() {
-        injectStyles();
-        createSoundToggle();
         setupGlobalSounds();
     }
 
