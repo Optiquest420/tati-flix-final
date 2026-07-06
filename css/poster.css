@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    background: #000 !important;
+    color: #fff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    overflow-x: hidden !important;
+    display: block !important;
+}
+
+/* PÁGINA */
+.poster-page {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* 
+   FUNDO ESTILO NETFLIX
+   Aqui usamos o poster com muito zoom para esconder os textos/botões falsos
+   e mostrar mais a zona das pessoas.
+*/
+.poster-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background-image: url("../images/poster-jantar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 46%;
+
+    filter: brightness(1.05) contrast(1.12);
+    transform: scale(1.08);
+
+    pointer-events: none;
+}
+
+/* GRADIENTE ESCURO À ESQUERDA + FADE CINEMATOGRÁFICO */
+.poster-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.98) 24%,
+            rgba(0, 0, 0, 0.84) 42%,
+            rgba(0, 0, 0, 0.45) 64%,
+            rgba(0, 0, 0, 0.18) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.55) 25%,
+            rgba(0, 0, 0, 0.10) 68%,
+            rgba(0, 0, 0, 0.58) 100%
+        );
+
+    pointer-events: none;
+}
+
+/* HEADER */
+.netflix-header {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    padding: 30px 4.8vw 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.netflix-logo {
+    color: #e50914;
+    font-size: clamp(34px, 4.4vw, 58px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-shadow: 0 0 24px rgba(229, 9, 20, 0.55);
+}
+
+.unlock-badge {
+    padding: 9px 18px;
+    border: 1px solid rgba(229, 9, 20, 0.75);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.68);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* CONTEÚDO À ESQUERDA */
+.netflix-hero {
+    position: relative;
+    z-index: 5;
+
+    min-height: calc(100vh - 95px);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 0 0 8vh 4.8vw;
+}
+
+.hero-info {
+    width: 560px;
+    max-width: 90vw;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    animation: fadeInLeft 0.9s ease forwards;
+}
+
+/* TEXTO */
+.original-label {
+    margin: 0 0 14px;
+
+    color: #e50914;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-info h1 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: clamp(66px, 8.4vw, 120px);
+    line-height: 0.86;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.95),
+        0 0 18px rgba(0, 0, 0, 0.85);
+}
+
+.hero-rating {
+    margin: 24px 0 22px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 11px;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.stars {
+    color: #e50914;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+}
+
+.hero-rating span:not(.stars) {
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+}
+
+/* DESCRIÇÃO */
+.hero-description {
+    max-width: 545px;
+    margin: 0 0 32px;
+
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 21px;
+    line-height: 1.5;
+
+    text-shadow: 0 5px 18px rgba(0, 0, 0, 0.95);
+}
+
+/* BOTÕES REAIS */
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+}
+
+.hero-actions a {
+    text-decoration: none;
+}
+
+.play-button,
+.my-list-button {
+    min-width: 190px;
+    padding: 15px 26px;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.play-button {
+    background: #e50914;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
+}
+
+.play-button:hover {
+    background: #ff1824;
+    transform: scale(1.05);
+    box-shadow: 0 0 42px rgba(229, 9, 20, 0.75);
+}
+
+.my-list-button {
+    background: rgba(109, 109, 110, 0.76);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.my-list-button:hover,
+.my-list-button.added {
+    background: rgba(255, 255, 255, 0.28);
+    transform: scale(1.05);
+}
+
+/* DETALHES */
+.hero-details {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.hero-details div {
+    position: relative;
+    min-width: 118px;
+}
+
+.hero-details div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -16px;
+    top: 5px;
+
+    width: 1px;
+    height: 42px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-details strong {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #e50914;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-details span {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.final-line {
+    margin-top: 38px;
+
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-34px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* TELEMÓVEL */
+@media (max-width: 850px) {
+    .poster-backdrop {
+        background-size: cover;
+        background-position: center top;
+        filter: brightness(0.72) contrast(1.08);
+        transform: scale(1.03);
+    }
+
+    .poster-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.94) 0%,
+                rgba(0, 0, 0, 0.76) 58%,
+                rgba(0, 0, 0, 0.32) 100%
+            ),
+            linear-gradient(
+                0deg,
+                #000 0%,
+                rgba(0, 0, 0, 0.76) 42%,
+                rgba(0, 0, 0, 0.24) 100%
+            );
+    }
+
+    .netflix-header {
+        padding: 24px 22px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .netflix-hero {
+        min-height: calc(100vh - 120px);
+        padding: 8vh 22px 7vh;
+        align-items: flex-end;
+    }
+
+    .hero-info {
+        width: 100%;
+    }
+
+    .hero-info h1 {
+        font-size: clamp(54px, 18vw, 88px);
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .play-button,
+    .my-list-button {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .hero-details div:not(:last-child)::after {
+        display: none;
+    }
+
+    .final-line {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}

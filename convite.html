@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite | TATI-FLIX</title>
+
+    <link rel="stylesheet" href="css/convite.css?v=3">
+</head>
+<script src="js/sounds.js?v=1"></script>
+<body>
+
+    <main class="invite-page">
+
+        <div class="cinema-bg"></div>
+        <div class="cinema-gradient"></div>
+        <div class="film-grain"></div>
+
+        <header class="invite-header">
+            <div class="logo">TATI-FLIX</div>
+            <div class="episode-status">Final desbloqueado</div>
+        </header>
+
+        <section class="invite-card" id="inviteCard">
+
+            <div class="episode-pill">Episódio especial</div>
+
+            <p class="small-label">TATI-FLIX apresenta</p>
+
+            <h1>O convite final</h1>
+
+            <p class="intro-text">
+                Depois de recuperares as memórias perdidas, completares a missão
+                e chegares até ao episódio especial...
+            </p>
+
+            <div class="question-box">
+                <span class="question-icon">🍽️</span>
+                <p>Aceitas ir jantar comigo?</p>
+            </div>
+
+            <div class="invite-details">
+
+                <div>
+                    <strong>Género</strong>
+                    <span>Comédia romântica</span>
+                </div>
+
+                <div>
+                    <strong>Duração</strong>
+                    <span>A combinar</span>
+                </div>
+
+                <div>
+                    <strong>Local</strong>
+                    <span>Surpresa</span>
+                </div>
+
+            </div>
+
+            <div class="invite-actions">
+
+                <button class="accept-button" id="acceptButton">
+                    ❤️ Aceito
+                </button>
+
+                <button class="dramatic-button" id="dramaticButton">
+                    Preciso pensar dramaticamente
+                </button>
+
+            </div>
+
+            <p class="tiny-note" id="tinyNote">
+                Sem pressão. Só uma produção romântica com orçamento emocional elevado.
+            </p>
+
+        </section>
+
+        <section class="accepted-card" id="acceptedCard">
+
+            <div class="success-ring">✓</div>
+
+            <p class="small-label">Convite aceite</p>
+
+            <h1>Jantar desbloqueado</h1>
+
+            <p class="accepted-text">
+                Excelente escolha.
+                <br>
+                A TATI-FLIX confirma oficialmente que este episódio ganhou continuação.
+            </p>
+
+            <div class="accepted-info">
+                <span>🍽️ Boa comida</span>
+                <span>💬 Conversa sem memes</span>
+                <span>❤️ Segunda temporada</span>
+            </div>
+
+            <p class="final-message">
+                Algumas histórias não precisam de muito drama.
+                <br>
+                Só de duas pessoas, uma mesa e vontade de escrever um capítulo melhor.
+            </p>
+
+            <a href="qrcode.html">
+                <button class="final-button">
+                    Ver surpresa final
+                </button>
+            </a>
+
+        </section>
+
+    </main>
+
+    <script>
+        const acceptButton = document.getElementById("acceptButton");
+        const dramaticButton = document.getElementById("dramaticButton");
+        const inviteCard = document.getElementById("inviteCard");
+        const acceptedCard = document.getElementById("acceptedCard");
+        const tinyNote = document.getElementById("tinyNote");
+
+        let dramaticClicks = 0;
+
+        const dramaticMessages = [
+            {
+                note: "Dramatização aceite. Mas a resposta certa continua ali ao lado.",
+                button: "Ainda estou a processar..."
+            },
+            {
+                note: "O algoritmo da TATI-FLIX analisou os dados e recomenda aceitar.",
+                button: "Está bem, estou quase convencida"
+            },
+            {
+                note: "A produção decidiu intervir. Esta opção agora também aceita.",
+                button: "Ok... Aceito ❤️"
+            }
+        ];
+
+        acceptButton.addEventListener("click", acceptInvite);
+
+        dramaticButton.addEventListener("click", () => {
+            if (dramaticClicks < dramaticMessages.length) {
+                tinyNote.textContent = dramaticMessages[dramaticClicks].note;
+                dramaticButton.textContent = dramaticMessages[dramaticClicks].button;
+                dramaticButton.classList.add("shake-soft");
+
+                setTimeout(() => {
+                    dramaticButton.classList.remove("shake-soft");
+                }, 400);
+
+                dramaticClicks++;
+            }
+
+            if (dramaticClicks >= dramaticMessages.length) {
+                dramaticButton.classList.add("converted");
+                dramaticButton.onclick = acceptInvite;
+            }
+        });
+
+        function acceptInvite() {
+            localStorage.setItem("tatiflix_invite", "accepted");
+
+            inviteCard.classList.add("hide");
+
+            setTimeout(() => {
+                inviteCard.style.display = "none";
+                acceptedCard.classList.add("show");
+                createHearts();
+                createSparkles();
+            }, 600);
+        }
+
+        function createHearts() {
+            for (let i = 0; i < 28; i++) {
+                const heart = document.createElement("div");
+                heart.className = "floating-heart";
+                heart.textContent = "❤";
+
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDelay = Math.random() * 1.8 + "s";
+                heart.style.fontSize = (14 + Math.random() * 24) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4800);
+            }
+        }
+
+        function createSparkles() {
+            for (let i = 0; i < 34; i++) {
+                const sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+
+                sparkle.style.left = Math.random() * 100 + "vw";
+                sparkle.style.top = Math.random() * 100 + "vh";
+                sparkle.style.animationDelay = Math.random() * 1.2 + "s";
+
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

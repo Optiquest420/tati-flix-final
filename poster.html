@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Jantar | TATI-FLIX</title>
+
+    
+    <link rel="stylesheet" href="css/poster.css?v=3">
+</head>
+<script src="js/sounds.js?v=1"></script>
+<body>
+
+    <div class="poster-page">
+
+        <div class="poster-backdrop"></div>
+        <div class="poster-overlay"></div>
+
+        <header class="netflix-header">
+            <div class="netflix-logo">TATI-FLIX</div>
+            <div class="unlock-badge">Episódio desbloqueado</div>
+        </header>
+
+        <main class="netflix-hero">
+
+            <section class="hero-info">
+
+                <p class="original-label">TATI-FLIX Original</p>
+
+                <h1>O Jantar</h1>
+
+                <div class="hero-rating">
+                    <span class="stars">★★★★★</span>
+                    <span>2026</span>
+                    <span>HD</span>
+                    <span>1 episódio</span>
+                </div>
+
+                <p class="hero-description">
+                    Depois de sobreviverem ao ginásio, dois toscos tentam descobrir
+                    se ainda sabem conversar sem enviar memes.
+                    <br><br>
+                    Algumas histórias merecem uma segunda temporada.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="convite.html">
+                        <button class="play-button">▶ Assistir</button>
+                    </a>
+
+                    <button class="my-list-button" id="myListButton">
+                        ＋ A minha lista
+                    </button>
+                </div>
+
+                <div class="hero-details">
+
+                    <div>
+                        <strong>Género</strong>
+                        <span>Comédia romântica</span>
+                    </div>
+
+                    <div>
+                        <strong>Duração</strong>
+                        <span>A combinar</span>
+                    </div>
+
+                    <div>
+                        <strong>Local</strong>
+                        <span>Surpresa</span>
+                    </div>
+
+                </div>
+
+                <p class="final-line">
+                    Algumas escolhas valem mais que mil planos.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script>
+        const myListButton = document.getElementById("myListButton");
+
+        if (myListButton) {
+            myListButton.addEventListener("click", () => {
+                myListButton.textContent = "✓ Adicionado à lista";
+                myListButton.classList.add("added");
+            });
+        }
+    </script>
+
+</body>
+
+</html>

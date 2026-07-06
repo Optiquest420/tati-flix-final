@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cena Pós-Créditos | TATI-FLIX</title>
+
+    <link rel="stylesheet" href="css/qrcode.css?v=1">
+</head>
+<script src="js/sounds.js?v=1"></script>
+<body>
+
+    <main class="final-page">
+
+        <div class="final-background"></div>
+        <div class="final-overlay"></div>
+        <div class="film-lines"></div>
+
+        <header class="final-header">
+            <div class="logo">TATI-FLIX</div>
+            <div class="final-badge">Cena pós-créditos</div>
+        </header>
+
+        <section class="final-card">
+
+            <p class="small-label">Relatório final da TATI-FLIX</p>
+
+            <h1>Cena pós-créditos</h1>
+
+            <p class="intro-text">
+                Se chegaste até aqui, desbloqueaste tudo com sucesso.
+                <br>
+                A missão foi concluída, o jantar foi aceite e a continuação desta história ficou oficialmente aprovada.
+            </p>
+
+            <div class="cast-frame">
+                <img src="images/elenco-final.png" alt="Elenco principal TATI-FLIX" class="cast-image">
+            </div>
+
+            <div class="post-credit-text">
+                <p>
+                    A TATI-FLIX confirma que este é o elenco principal da próxima temporada.
+                </p>
+
+                <p>
+                    Um coprotagonista pronto para avançar.
+                    <br>
+                    E uma protagonista que continua a ser a personagem principal desta produção toda.
+                </p>
+            </div>
+
+            <div class="summary-grid">
+
+                <div>
+                    <strong>Missão</strong>
+                    <span>Concluída</span>
+                </div>
+
+                <div>
+                    <strong>Convite</strong>
+                    <span>Aceite</span>
+                </div>
+
+                <div>
+                    <strong>Jantar</strong>
+                    <span>Desbloqueado</span>
+                </div>
+
+                <div>
+                    <strong>Próximo episódio</strong>
+                    <span>A marcar</span>
+                </div>
+
+            </div>
+
+            <p class="final-quote">
+                Algumas escolhas valem mais que mil planos.
+                <br>
+                E algumas histórias merecem mesmo uma segunda temporada.
+            </p>
+
+            <div class="final-actions">
+
+                <button class="finish-button" id="finishButton">
+                    Fim do episódio ❤️
+                </button>
+
+                <a href="index.html">
+                    <button class="restart-button">
+                        Rever desde o início
+                    </button>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const finishButton = document.getElementById("finishButton");
+
+        finishButton.addEventListener("click", () => {
+            finishButton.textContent = "Episódio guardado na memória ❤️";
+            finishButton.classList.add("finished");
+
+            createFinalHearts();
+        });
+
+        function createFinalHearts() {
+            for (let i = 0; i < 28; i++) {
+                const heart = document.createElement("div");
+                heart.className = "final-heart";
+                heart.textContent = "❤";
+
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDelay = Math.random() * 1.5 + "s";
+                heart.style.fontSize = (14 + Math.random() * 24) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4500);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

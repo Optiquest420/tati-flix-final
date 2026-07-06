@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Missão 001</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mission.css">
+
+</head>
+<script src="js/sounds.js?v=1"></script>
+<body>
+
+    <div class="mission-container">
+
+        <div id="intro">
+
+            <h3>MISSÃO 001</h3>
+
+            <h1>Recuperar as Memórias Perdidas</h1>
+
+            <p>
+                Existem algumas palavras escondidas.
+
+                <br><br>
+
+                Sozinhas parecem normais.
+
+                <br>
+
+                Juntas contam uma história que apenas duas pessoas conseguem compreender.
+
+                <br><br>
+
+                Encontra todas para desbloqueares o episódio exclusivo.
+            </p>
+
+            <button id="startMission">
+                Iniciar Sistema
+            </button>
+
+        </div>
+
+        <div id="loading" style="display:none;">
+
+            <h2>Inicializando Sistema...</h2>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+            <p id="loadingText">
+                A preparar missão...
+            </p>
+
+        </div>
+
+
+        <div id="game" style="display:none;">
+
+            <h2>Sopa de Letras</h2>
+
+            <p>Encontra todas as palavras para desbloquear o episódio.</p>
+
+            <div id="wordsearch"></div>
+
+            <div id="wordList">
+
+                <h3>Palavras</h3>
+
+                <ul>
+
+                    <li data-word="ROSINHA">Rosinha</li>
+
+                    <li data-word="BRASAO">Brasão</li>
+
+                    <li data-word="TINHOSO">Tinhoso</li>
+
+                    <li data-word="PRESSINHAS">Pressinhas</li>
+
+                    <li data-word="INDIVIDUAL">Individual</li>
+
+                    <li data-word="FRANCESINHA">Francesinha</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+    </div>
+
+    <script src="js/mission.js"></script>
+    <script src="js/wordsearch.js"></script>
+
+</body>
+
+</html>

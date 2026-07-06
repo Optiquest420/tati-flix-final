@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATI-FLIX</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .netflix-intro {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            animation: introExit 1s ease forwards;
+            animation-delay: 4.2s;
+        }
+
+        .intro-logo {
+            color: #e50914;
+            font-size: clamp(52px, 11vw, 130px);
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-shadow:
+                0 0 12px rgba(229, 9, 20, 0.7),
+                0 0 40px rgba(229, 9, 20, 0.35);
+            opacity: 0;
+            transform: scale(0.82);
+            animation: logoReveal 3.2s ease forwards;
+        }
+
+        .intro-line {
+            margin-top: 18px;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #e50914, transparent);
+            animation: lineReveal 2.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .intro-subtitle {
+            margin-top: 28px;
+            color: #ffffff;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: subtitleReveal 1.8s ease forwards;
+            animation-delay: 1.7s;
+        }
+
+        .home-content {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: homeReveal 1s ease forwards;
+            animation-delay: 5s;
+        }
+
+        .home-badge {
+            display: inline-block;
+            margin-bottom: 22px;
+            padding: 8px 18px;
+            border: 1px solid rgba(229, 9, 20, 0.6);
+            border-radius: 999px;
+            color: #e50914;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: rgba(229, 9, 20, 0.08);
+        }
+
+        .home-actions {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .secondary-button:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        @keyframes logoReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.72);
+                filter: blur(14px);
+            }
+
+            35% {
+                opacity: 1;
+                transform: scale(1.08);
+                filter: blur(0);
+            }
+
+            68% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.12);
+                filter: blur(5px);
+            }
+        }
+
+        @keyframes lineReveal {
+            0% {
+                width: 0;
+                opacity: 0;
+            }
+
+            40% {
+                width: 320px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 160px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes subtitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            35% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes introExit {
+            to {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+
+        @keyframes homeReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .intro-subtitle {
+                font-size: 12px;
+                letter-spacing: 3px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 52px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+            button {
+                width: 100%;
+                max-width: 320px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="netflix-intro" id="netflixIntro">
+        <div class="intro-logo">TATI-FLIX</div>
+        <div class="intro-line"></div>
+        <div class="intro-subtitle">Uma experiência original</div>
+    </div>
+
+    <div class="container home-content">
+
+        <div class="home-badge">Conteúdo Restrito</div>
+
+        <h1>TATI-FLIX</h1>
+
+        <h2>Episódio Exclusivo</h2>
+
+        <p>
+            Existe um episódio reservado apenas para ti.
+            <br><br>
+            Para o desbloqueares, terás de concluir uma pequena missão.
+            <br>
+            Algumas memórias estão escondidas. Encontra-as todas.
+        </p>
+
+        <div class="home-actions">
+            <a href="mission.html">
+                <button>▶ Iniciar Missão</button>
+            </a>
+        </div>
+
+    </div>
+    <script>
+    setTimeout(() => {
+        document.body.style.overflow = "auto";
+    }, 5200);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+.progress-bar {
+
+    width: 500px;
+
+    height: 18px;
+
+    background: #333;
+
+    margin: 40px auto;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #E50914;
+
+    transition: width .4s;
+
+}
+
+#loading h2 {
+
+    margin-top: 50px;
+
+}
+
+#loadingText {
+
+    margin-top: 30px;
+
+    font-size: 22px;
+
+}
+
+#wordsearch {
+
+    width: 700px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(14, 45px);
+
+    gap: 3px;
+
+    justify-content: center;
+
+}
+
+.cell {
+
+    width: 45px;
+
+    height: 45px;
+
+    background: #222;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    transition: .2s;
+
+}
+
+.cell:hover {
+
+    background: #E50914;
+
+}
+#wordsearch {
+    display: inline-block;
+    margin: 30px auto;
+    user-select: none;
+}
+
+.ws-row {
+    display: flex;
+    justify-content: center;
+}
+
+.ws-cell {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-family: monospace;
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    border-radius: 6px;
+}
+
+.ws-cell:hover {
+    background: rgba(255,255,255,.15);
+}
+
+.ws-cell.selected {
+    background: #e50914;
+    color: white;
+}
+
+.ws-cell.found {
+    background: #00c853;
+    color: white;
+}
