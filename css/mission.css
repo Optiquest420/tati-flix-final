@@ -136,3 +136,67 @@
     background: #00c853;
     color: white;
 }
+/* ================================
+   MOBILE FIX - SOPA DE LETRAS
+================================ */
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .mission-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 10px;
+    }
+
+    #game {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 6px;
+    }
+
+    #wordsearch {
+        max-width: calc(100vw - 20px) !important;
+        padding: 6px !important;
+        margin: 22px auto !important;
+        overflow: visible !important;
+    }
+
+    .ws-row {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    .ws-cell {
+        width: clamp(18px, 5.2vw, 24px) !important;
+        height: clamp(18px, 5.2vw, 24px) !important;
+        margin: 1px !important;
+
+        font-size: clamp(12px, 3.8vw, 16px) !important;
+        border-radius: 5px !important;
+    }
+
+    #wordList {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    #wordList ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    #wordList li {
+        font-size: 15px;
+        margin: 5px 0;
+    }
+
+    .ws-progress-wrapper {
+        max-width: 90vw !important;
+    }
+}

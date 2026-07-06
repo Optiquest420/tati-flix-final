@@ -465,3 +465,79 @@ h1 {
         min-width: unset;
     }
 }
+/* ================================
+   MOBILE FIX - PÓS-CRÉDITOS
+================================ */
+
+@media (max-width: 760px) {
+    .final-page {
+        padding: 110px 14px 30px !important;
+        align-items: flex-start !important;
+    }
+
+    .final-header {
+        padding: 18px 16px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .logo {
+        font-size: 32px !important;
+    }
+
+    .final-badge {
+        font-size: 12px !important;
+        padding: 7px 13px !important;
+    }
+
+    .final-card {
+        width: 100% !important;
+        padding: 26px 16px !important;
+        border-radius: 22px !important;
+    }
+
+    .final-card h1 {
+        font-size: clamp(36px, 12vw, 58px) !important;
+        line-height: 1 !important;
+    }
+
+    .intro-text,
+    .post-credit-text,
+    .final-quote {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+
+    .cast-frame {
+        padding: 6px !important;
+        border-radius: 16px !important;
+    }
+
+    .cast-image {
+        border-radius: 12px !important;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .final-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .final-actions a,
+    .finish-button,
+    .restart-button {
+        width: 100% !important;
+    }
+
+    .finish-button,
+    .restart-button {
+        min-width: unset !important;
+        font-size: 16px !important;
+        padding: 15px 18px !important;
+    }
+}

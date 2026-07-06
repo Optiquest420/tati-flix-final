@@ -374,3 +374,80 @@ body {
         line-height: 1.7;
     }
 }
+/* ================================
+   MOBILE FIX - POSTER
+================================ */
+
+@media (max-width: 700px) {
+    .netflix-header {
+        padding: 20px 18px 0 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    .netflix-logo {
+        font-size: 34px !important;
+    }
+
+    .unlock-badge {
+        font-size: 12px !important;
+        padding: 7px 13px !important;
+    }
+
+    .netflix-hero {
+        min-height: auto !important;
+        padding: 70px 18px 40px !important;
+        align-items: flex-start !important;
+    }
+
+    .hero-info {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .hero-info h1 {
+        font-size: clamp(48px, 17vw, 76px) !important;
+        line-height: 0.9 !important;
+    }
+
+    .hero-description {
+        font-size: 17px !important;
+        line-height: 1.45 !important;
+        max-width: 100% !important;
+    }
+
+    .hero-actions {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .hero-actions a,
+    .play-button,
+    .my-list-button {
+        width: 100% !important;
+    }
+
+    .play-button,
+    .my-list-button {
+        min-width: unset !important;
+        font-size: 17px !important;
+        padding: 15px 20px !important;
+    }
+
+    .hero-details {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .hero-details div::after {
+        display: none !important;
+    }
+
+    .final-line {
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+}
