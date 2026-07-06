@@ -11,7 +11,7 @@
        CONFIGURAÇÃO
     ========================= */
 
-    const GRID_SIZE = 15;
+    const GRID_SIZE = 13;
 
     const FALLBACK_WORDS = [
         "ROSINHA",
